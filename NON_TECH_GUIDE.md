@@ -90,9 +90,20 @@ git push -u origin main
 
 ## ⚙️ ধাপ ৬: অ্যাডমিন ও শেষ কাজ
 
-1.  ডিপ্লয় হয়ে গেলে Vercel আপনাকে একটি লিংক দেবে (যেমন: `https://taskmanager.vercel.app`)।
-2.  **Environment Variables**-এ গিয়ে `NEXT_PUBLIC_API_URL` আপডেট করুন (যদি আগে না দিয়ে থাকেন) এবং `https://আপনার-ডোমেইন.vercel.app/api` বসিয়ে **Redeploy** করুন।
-3.  **অ্যাডমিন প্যানেল**: `https://আপনার-ডোমেইন.vercel.app/admin` এ যান।
+1.  ডিপ্লয় হয়ে গেলে Vercel আপনাকে একটি লিংক দেবে (যেমন: `https://taskmanager.vercel.app`)। এটিই আপনার **ডোমেইন**।
+2.  Vercel ড্যাশবোর্ডে আপনার প্রজেক্টে যান।
+3.  উপরে **"Settings"** ট্যাবে ক্লিক করুন।
+4.  বাম পাশে **"Environment Variables"** মেনুতে ক্লিক করুন।
+5.  নিচের দুটি ভেরিয়েবল চেক করুন (না থাকলে নতুন করে অ্যাড করুন বা থাকলে এডিট করুন):
+
+    - `NEXT_PUBLIC_API_URL` : মান হবে `https://আপনার-ডোমেইন.vercel.app/api`
+    - `VITE_API_URL` : মান হবে `https://আপনার-ডোমেইন.vercel.app/api`
+    
+    *(উদাহরণ: যদি আপনার লিংক `https://taskmia.vercel.app` হয়, তাহলে মান হবে `https://taskmia.vercel.app/api`)*
+
+6.  সেভ করার পর **"Deployments"** ট্যাবে যান।
+7.  সবশেষ ডিপ্লয়মেন্টের পাশে ৩টি ডট (...) এ ক্লিক করে **"Redeploy"**-এ ক্লিক করুন।
+8.  ব্যাস! এবার **অ্যাডমিন প্যানেল**: `https://আপনার-ডোমেইন.vercel.app/admin` এ যান।
 
 ---
 
