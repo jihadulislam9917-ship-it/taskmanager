@@ -16,6 +16,11 @@ func main() {
 
 	config.ConnectDB()
 
+	// Run Migrations
+	if err := models.Migrate(config.DB); err != nil {
+		log.Fatalf("Failed to run migrations: %v", err)
+	}
+
 	// Create Admin User
 	adminEmail := "admin@example.com"
 	password := "admin123"
