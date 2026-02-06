@@ -30,7 +30,7 @@ export default function ProfilePage() {
     const fetchUser = async () => {
       try {
         const userData = await getCurrentUser();
-        // @ts-ignore
+        // @ts-expect-error - User type mismatch with API response
         setUser(userData);
         setFormData(prev => ({ ...prev, name: userData.name }));
       } catch (error) {
@@ -64,11 +64,12 @@ export default function ProfilePage() {
         password: formData.password || undefined,
         current_password: formData.currentPassword || undefined,
       });
-      // @ts-ignore
+      // @ts-expect-error - User type mismatch with API response
       setUser(updatedUser);
       setEditing(false);
       setFormData(prev => ({ ...prev, password: '', confirmPassword: '', currentPassword: '' }));
       setMessage({ type: 'success', text: 'Profile updated successfully' });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error('Failed to update profile:', error);
       setMessage({ type: 'error', text: error.response?.data?.error || 'Failed to update profile' });

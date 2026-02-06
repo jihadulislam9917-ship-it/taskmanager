@@ -15,6 +15,7 @@ export default function SignupPage() {
     try {
       await register(name, email, password);
       window.location.href = '/login';
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.error || 'Registration failed');
     }

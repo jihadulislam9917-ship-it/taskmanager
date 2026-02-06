@@ -14,6 +14,7 @@ export default function LoginPage() {
     try {
       await login(email, password);
       window.location.href = '/';
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.error || 'Login failed');
     }
@@ -65,7 +66,7 @@ export default function LoginPage() {
           
           <div className="text-sm text-center">
             <Link href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
-              Don't have an account? Sign up
+              Don&apos;t have an account? Sign up
             </Link>
           </div>
         </form>

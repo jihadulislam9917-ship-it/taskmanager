@@ -55,6 +55,7 @@ function App() {
             setStats(statsData);
             setUsers(usersData);
             setTransactions(transactionsData);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             console.error(err);
             if (err.response?.status === 401) {
@@ -73,6 +74,7 @@ function App() {
             const data = await loginAdmin(email, password);
             localStorage.setItem('admin_token', data.token);
             setToken(data.token);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             setError(err.message || 'Login failed');
         } finally {
@@ -94,7 +96,7 @@ function App() {
         try {
             await updateUserStatus(user.id, { role: newRole });
             setUsers(users.map(u => u.id === user.id ? { ...u, role: newRole } : u));
-        } catch (err) {
+        } catch {
             alert('Failed to update role');
         }
     };
@@ -106,7 +108,7 @@ function App() {
         try {
             await updateUserStatus(user.id, { subscription_status: newStatus });
             setUsers(users.map(u => u.id === user.id ? { ...u, subscription_status: newStatus } : u));
-        } catch (err) {
+        } catch {
             alert('Failed to update subscription');
         }
     };
@@ -120,7 +122,7 @@ function App() {
         try {
             const updatedUser = await addUserCredits(user.id, amount);
             setUsers(users.map(u => u.id === user.id ? { ...u, credits: updatedUser.credits } : u));
-        } catch (err) {
+        } catch {
             alert('Failed to add credits');
         }
     };

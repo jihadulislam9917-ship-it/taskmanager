@@ -27,8 +27,8 @@
       "dest": "/admin-panel/assets/$1"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "/admin-panel/$1"
+      "src": "/admin/.*",
+      "dest": "/admin-panel/index.html"
     },
     {
       "src": "/admin",

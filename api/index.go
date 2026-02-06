@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"log"
 	"net/http"
 	"taskmanager-backend/backend/config"
 	"taskmanager-backend/backend/routes"

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { createPaymentIntent } from '@/lib/api';
 import { X, Loader2 } from 'lucide-react';

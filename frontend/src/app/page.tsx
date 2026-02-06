@@ -73,6 +73,7 @@ export default function Home() {
         setTasks([...tasks, created]);
       }
       setIsModalOpen(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       if (err.response?.status === 403 && err.response?.data?.error === 'Insufficient credits') {
         alert('You have run out of credits! Please purchase more to continue.');
