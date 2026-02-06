@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "api/index.go",
+      "use": "@vercel/go"
+    },
+    {
+      "src": "admin-panel/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.go"
+    },
+    {
+      "src": "/admin/assets/(.*)",
+      "dest": "/admin-panel/assets/$1"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin-panel/$1"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin-panel/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ],
+  "env": {
+    "GO_ENV": "production"
+  }
+}
