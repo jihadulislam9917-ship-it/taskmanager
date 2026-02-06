@@ -59,7 +59,8 @@ git push -u origin main
 
 1.  Vercel ড্যাশবোর্ডে গিয়ে **"Add New..."** > **"Project"**-এ ক্লিক করুন।
 2.  আপনার GitHub কানেক্ট করুন এবং `taskmanager` প্রজেক্টটি সিলেক্ট করুন।
-3.  **Framework Preset** হিসেবে `Next.js` অটো সিলেক্ট হওয়ার কথা। না হলে `Next.js` সিলেক্ট করুন।
+3.  **Framework Preset**-এ ক্লিক করে **"Other"** সিলেক্ট করুন।
+    - *কেন Other?* কারণ আমাদের প্রজেক্টে Next.js (Frontend) এবং Vite (Admin) দুটোই আছে। আমরা কোডের ভেতরেই (vercel.json ফাইলে) সব সেটিং করে দিয়েছি। তাই "Other" দিলেই সবচেয়ে ভালো কাজ করবে।
 4.  **Environment Variables** সেকশনে ক্লিক করে নিচের তথ্যগুলো যোগ করুন:
 
 | নাম (Name) | মান (Value) | বর্ণনা |
